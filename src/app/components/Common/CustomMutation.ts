@@ -1,4 +1,3 @@
-// import { useMutation } from "react-query";
 import { IUseCustomMutation } from "./Interfaces/customMutation";
 import { errorToastify } from "./Toastify";
 import { ApolloError, useMutation } from "@apollo/client";
