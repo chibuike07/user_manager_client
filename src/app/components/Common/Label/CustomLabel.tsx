@@ -2,44 +2,34 @@
 
 import React from "react";
 import { styled } from "styled-components";
-import { ICustomSelect } from "./Interface";
+import { ICustomLabel } from "./Interface";
 
-const CustomSelect = ({
+const CustomLabel = ({
   width,
   height,
-  options,
+  htmlFor,
   otherStyles,
   ...otherProps
-}: ICustomSelect) => {
+}: ICustomLabel) => {
   return (
-    <Select
+    <Label
+      htmlFor={htmlFor}
       style={{
         width: width ?? "",
         height: height ?? "",
         ...otherStyles,
       }}
       {...otherProps}
-    >
-      {options.length > 0 &&
-        options.map((option, key) => (
-          <option key={key} value={option}>
-            {option}
-          </option>
-        ))}
-    </Select>
+    />
   );
 };
 
-const Select = styled.select`
+const Label = styled.label`
   width: ${(props: any) => props?.width ?? "100%"};
   height: ${(props: any) => props?.height ?? "100%"};
-  border: none;
-  outline: none;
-  border-radius: 0.5rem;
   text-transform: capitalize;
-  cursor: pointer;
   small {
     text-transform: lowercase;
   }
 `;
-export default CustomSelect;
+export default CustomLabel;
