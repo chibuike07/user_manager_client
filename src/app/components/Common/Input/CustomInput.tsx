@@ -7,14 +7,16 @@ import { ICustomInput } from "./Interface";
 const CustomInput = ({
   width,
   height,
+  type,
   otherStyles,
-  otherProps,
+  ...otherProps
 }: ICustomInput) => {
   return (
     <Input
+      type={type}
       style={{
-        width: width ?? null,
-        height: height ?? null,
+        width: width ?? "",
+        height: height ?? "",
         ...otherStyles,
       }}
       {...otherProps}
@@ -29,7 +31,6 @@ const Input = styled.input`
   outline: none;
   border-radius: 0.5rem;
   text-transform: capitalize;
-  cursor: pointer;
   small {
     text-transform: lowercase;
   }

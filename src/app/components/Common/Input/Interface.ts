@@ -1,7 +1,9 @@
+import { CSSProperties, HTMLAttributes } from "react";
+
 export interface ICustomInput {
-  width: string | number;
-  height: string | number;
-  text: string;
-  otherStyles?: object;
-  otherProps?: object;
+  width?: string | number;
+  type: string;
+  height?: string | number;
+  otherStyles?: CSSProperties;
+  otherProps?: HTMLAttributes<any>;
 }

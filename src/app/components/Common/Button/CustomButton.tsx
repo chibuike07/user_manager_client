@@ -11,13 +11,13 @@ const CustomButton = ({
   color,
   text,
   otherStyles,
-  otherProps,
+  ...otherProps
 }: ICustomButton) => {
   return (
     <Button
       style={{
         width: width ?? "",
-        height: height ?? null,
+        height: height ?? "",
 
         backgroundColor: backgroundColor
           ? backgroundColor
