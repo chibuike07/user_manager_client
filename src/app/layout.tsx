@@ -19,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ApolloWrapper>
-          <div>{children}</div>
+          <ReduxProvider>
+            <div>{children}</div>
+          </ReduxProvider>
         </ApolloWrapper>
       </body>
     </html>

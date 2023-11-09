@@ -1,14 +1,16 @@
+"use client";
 import React from "react";
 import CustomLabel from "../Common/Label/CustomLabel";
 import CustomInput from "../Common/Input/CustomInput";
 import CustomSelect from "../Common/Select/CustomSelect";
 import { Form } from "./formComponentStyle";
 import { useSelector } from "react-redux";
-import { ReduxProvider } from "@/Store/ReduxProvider";
+import UseSelectSugar from "../UseClientSugarTexts/useSelectSugar";
 
 const RegisterForm = () => {
-  const selectedUser = useSelector((state: any) => state);
+  const { selectedUser } = UseSelectSugar("registerReducer");
 
+  console.log("selectedUser :>> ", selectedUser);
   return (
     <Form>
       <fieldset className="fm_group">
@@ -58,4 +60,4 @@ const RegisterForm = () => {
   );
 };
 
-export default ReduxProvider(RegisterForm);
+export default RegisterForm;
