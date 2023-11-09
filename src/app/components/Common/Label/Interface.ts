@@ -1,9 +1,10 @@
 import { CSSProperties, HTMLAttributes } from "react";
 
-export interface ICustomLists {
+export interface ICustomLabel {
   width?: string | number;
   height?: string | number;
-  text: string | any;
+  text: string;
+  htmlFor: string;
   otherstyles?: CSSProperties;
   otherprops?: HTMLAttributes<any>;
 }

@@ -1,7 +1,9 @@
+import { CSSProperties, HTMLAttributes, FormEvent } from "react";
+
 export interface ICustomSelect {
-  width: string | number;
-  height: string | number;
+  width?: string | number;
+  height?: string | number;
   options: any[];
-  otherStyles: object;
-  otherProps: object;
+  otherstyles?: CSSProperties;
+  otherprops: any;
 }

@@ -1,25 +1,14 @@
 "use client";
 
-import React from "react";
+import React, {
+  HTMLAttributes,
+  HTMLInputTypeAttribute,
+  InputHTMLAttributes,
+} from "react";
 import { styled } from "styled-components";
-import { ICustomInput } from "./Interface";
 
-const CustomInput = ({
-  width,
-  height,
-  otherStyles,
-  otherProps,
-}: ICustomInput) => {
-  return (
-    <Input
-      style={{
-        width: width ?? null,
-        height: height ?? null,
-        ...otherStyles,
-      }}
-      {...otherProps}
-    />
-  );
+const CustomInput = (props: InputHTMLAttributes<any>) => {
+  return <Input {...props} />;
 };
 
 const Input = styled.input`
@@ -29,7 +18,6 @@ const Input = styled.input`
   outline: none;
   border-radius: 0.5rem;
   text-transform: capitalize;
-  cursor: pointer;
   small {
     text-transform: lowercase;
   }

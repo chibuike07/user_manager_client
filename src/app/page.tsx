@@ -1,11 +1,30 @@
-import CustomButton from "./components/Common/Button/CustomButton";
+"use client";
+import { Main, PageForm } from "./pageStyles";
+import React from "react";
+import SelectSugar from "./components/UseClientSugarTexts/SelectSugar";
+import {
+  faShapes,
+  FontAwesomeIcon,
+} from "./components/Common/IconsSugar/icons";
+import { ReduxProvider } from "../Store/ReduxProvider";
 
-export default function Home() {
+const Home = () => {
   return (
-    <main>
-      <h2>heading</h2>
-
-      <CustomButton text="hello" width={"100px"} height={"30px"} />
-    </main>
+    <ReduxProvider>
+      <Main>
+        <div className="wrapper">
+          <header className="wp_header">
+            <FontAwesomeIcon icon={faShapes} className="icon" size="5x" />
+            <h2>Welcome to the onboarding,</h2>
+            <p>kindly identify yourself from the options</p>
+          </header>
+          <PageForm>
+            <SelectSugar />
+          </PageForm>
+        </div>
+      </Main>
+    </ReduxProvider>
   );
-}
+};
+
+export default Home;

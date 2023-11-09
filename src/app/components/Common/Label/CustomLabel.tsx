@@ -2,18 +2,19 @@
 
 import React from "react";
 import { styled } from "styled-components";
-import { ICustomSelect } from "./Interface";
+import { ICustomLabel } from "./Interface";
 
-const CustomSelect = ({
+const CustomLabel = ({
   width,
   height,
-  options,
+  htmlFor,
+  text,
   otherstyles,
   ...otherprops
-}: ICustomSelect) => {
-  console.log("otherprops :>> ", otherprops);
+}: ICustomLabel) => {
   return (
-    <Select
+    <Label
+      htmlFor={htmlFor}
       style={{
         width: width ?? "",
         height: height ?? "",
@@ -21,23 +22,17 @@ const CustomSelect = ({
       }}
       {...otherprops}
     >
-      {options.length > 0 &&
-        options.map((option, key) => (
-          <option key={key} value={option}>
-            {option}
-          </option>
-        ))}
-    </Select>
+      {text}
+    </Label>
   );
 };
 
-const Select = styled.select`
+const Label = styled.label`
   width: ${(props: any) => props?.width ?? "100%"};
   height: ${(props: any) => props?.height ?? "100%"};
-  border: none;
-  outline: none;
+  text-transform: capitalize;
   small {
     text-transform: lowercase;
   }
 `;
-export default CustomSelect;
+export default CustomLabel;
