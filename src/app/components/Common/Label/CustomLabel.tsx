@@ -8,8 +8,9 @@ const CustomLabel = ({
   width,
   height,
   htmlFor,
-  otherStyles,
-  ...otherProps
+  text,
+  otherstyles,
+  ...otherprops
 }: ICustomLabel) => {
   return (
     <Label
@@ -17,10 +18,12 @@ const CustomLabel = ({
       style={{
         width: width ?? "",
         height: height ?? "",
-        ...otherStyles,
+        ...otherstyles,
       }}
-      {...otherProps}
-    />
+      {...otherprops}
+    >
+      {text}
+    </Label>
   );
 };
 

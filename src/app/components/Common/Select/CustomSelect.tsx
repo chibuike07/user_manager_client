@@ -8,17 +8,18 @@ const CustomSelect = ({
   width,
   height,
   options,
-  otherStyles,
-  ...otherProps
+  otherstyles,
+  ...otherprops
 }: ICustomSelect) => {
+  console.log("otherprops :>> ", otherprops);
   return (
     <Select
       style={{
         width: width ?? "",
         height: height ?? "",
-        ...otherStyles,
+        ...otherstyles,
       }}
-      {...otherProps}
+      {...otherprops}
     >
       {options.length > 0 &&
         options.map((option, key) => (
@@ -35,9 +36,6 @@ const Select = styled.select`
   height: ${(props: any) => props?.height ?? "100%"};
   border: none;
   outline: none;
-  border-radius: 0.5rem;
-  text-transform: capitalize;
-  cursor: pointer;
   small {
     text-transform: lowercase;
   }

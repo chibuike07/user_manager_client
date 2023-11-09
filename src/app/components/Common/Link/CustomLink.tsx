@@ -8,16 +8,16 @@ import Link from "next/link";
 const CustomLink = ({
   text,
   href,
-  otherStyles,
-  ...otherProps
+  otherstyles,
+  ...otherprops
 }: ICustomLink) => {
   return (
     <Links
       href={href ?? ""}
       style={{
-        ...otherStyles,
+        ...otherstyles,
       }}
-      {...otherProps}
+      {...otherprops}
     >
       {text}
     </Links>

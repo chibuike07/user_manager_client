@@ -8,17 +8,17 @@ const CustomLists = ({
   width,
   height,
   text,
-  otherStyles,
-  ...otherProps
+  otherstyles,
+  ...otherprops
 }: ICustomLists) => {
   return (
     <List
       style={{
         width: width ?? "",
         height: height ?? "",
-        ...otherStyles,
+        ...otherstyles,
       }}
-      {...otherProps}
+      {...otherprops}
     >
       {text}
     </List>

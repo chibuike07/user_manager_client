@@ -12,14 +12,14 @@ const SignInForm = ({ identity }: IFormComponent) => {
           <CustomLabel htmlFor="name" text="Name" />
           <CustomInput
             type="text"
-            otherProps={{ placeholder: "Enter name", id: "name" }}
+            // otherprops={{ placeholder: "Enter name", id: "name" }}
           />
         </div>
         <div className="fm_gp_wrapper">
           <CustomLabel htmlFor="surname" text="Surname" />
           <CustomInput
             type="text"
-            otherProps={{ placeholder: "Enter Surname", id: "surname" }}
+            // otherprops={{ placeholder: "Enter Surname", id: "surname" }}
           />
         </div>
       </fieldset>
@@ -29,10 +29,10 @@ const SignInForm = ({ identity }: IFormComponent) => {
             <CustomLabel htmlFor="code" text="Code" />
             <CustomInput
               type="text"
-              otherProps={{
-                placeholder: "Enter your unique code",
-                id: "code",
-              }}
+              // otherprops={{
+              //   placeholder: "Enter your unique code",
+              //   id: "code",
+              // }}
             />
           </div>
         </fieldset>

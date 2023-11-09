@@ -1,11 +1,16 @@
 "use client";
-
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import { Provider } from "react-redux";
 import { store } from "./store";
 
-const ReduxProvider = ({ children }: { children: React.ReactNode }) => {
-  return <Provider store={store}>{children}</Provider>;
-};
+export const ReduxProvider = (WrapperComponent: FC) => {
+  const withReduxProvider = ({ ...props }) => {
+    return (
+      <Provider store={store}>
+        <WrapperComponent {...props} />
+      </Provider>
+    );
+  };
 
-export default ReduxProvider;
+  return withReduxProvider;
+};

@@ -2,15 +2,15 @@
 import React from "react";
 import CustomLink from "../Common/Link/CustomLink";
 import { ILinkSugar } from "./Interface";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 const LinkSugar = ({ text }: ILinkSugar) => {
   const router = useRouter();
   const handleSignIn = (e: React.MouseEvent<any, MouseEvent>) => {
-    // console.log("click");
+    console.log("click");
     // return router.push("")
   };
   return (
-    <CustomLink text={text} otherProps={{ onClick: (e) => handleSignIn(e) }} />
+    <CustomLink text={text} otherprops={{ onClick: (e) => handleSignIn(e) }} />
   );
 };
 

@@ -1,35 +1,29 @@
-import Register from "./View/register/page";
-import CustomInput from "./components/Common/Input/CustomInput";
-import CustomLabel from "./components/Common/Label/CustomLabel";
-import { PageForm } from "./pageStyles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShapes } from "@fortawesome/free-solid-svg-icons";
-import CustomSelect from "./components/Common/Select/CustomSelect";
+import { Main, PageForm } from "./pageStyles";
 import React from "react";
-import { setIdentity } from "../Store/registerReducer";
-export default function Home() {
-  const handleChange = (e: React.FormEvent<HTMLSelectElement>) => {
-    e.preventDefault();
-
-    setIdentity(e.target);
-  };
+import SelectSugar from "./components/UseClientSugarTexts/SelectSugar";
+import {
+  faShapes,
+  FontAwesomeIcon,
+} from "./components/Common/IconsSugar/icons";
+import { useSelector } from "react-redux";
+import { ReduxProvider } from "@/Store/ReduxProvider";
+const Home = () => {
+  const row = useSelector((state) => console.log("state :>> ", state));
+  console.log("row :>> ", row);
   return (
-    <main>
+    <Main>
       <div className="wrapper">
+        <header className="wp_header">
+          <FontAwesomeIcon icon={faShapes} className="icon" size="5x" />
+          <h2>Welcome to the onboarding,</h2>
+          <p>kindly identify yourself from the options</p>
+        </header>
         <PageForm>
-          <header className="wp_header">
-            <FontAwesomeIcon icon={faShapes} className="icon" />
-            <h2>Welcome to the onboarding,</h2>
-            <p>kindly identify yourself from the options</p>
-          </header>
-          <form>
-            <CustomSelect
-              options={["Student", "Teacher"]}
-              otherProps={{ onChange: (e) => handleChange(e) }}
-            />
-          </form>
+          <SelectSugar />
         </PageForm>
       </div>
-    </main>
+    </Main>
   );
-}
+};
+
+export default Home;

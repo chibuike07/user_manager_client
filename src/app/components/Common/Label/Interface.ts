@@ -5,6 +5,6 @@ export interface ICustomLabel {
   height?: string | number;
   text: string;
   htmlFor: string;
-  otherStyles?: CSSProperties;
-  otherProps?: HTMLAttributes<any>;
+  otherstyles?: CSSProperties;
+  otherprops?: HTMLAttributes<any>;
 }

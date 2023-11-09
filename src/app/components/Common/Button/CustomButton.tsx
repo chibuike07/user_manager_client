@@ -1,40 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { ButtonHTMLAttributes, FC } from "react";
 import { styled } from "styled-components";
-import { ICustomButton } from "./Interface";
+// import { ICustomButton } from "./Interface";
 
-const CustomButton = ({
-  width,
-  height,
-  backgroundColor,
-  color,
-  text,
-  otherStyles,
-  ...otherProps
-}: ICustomButton) => {
-  return (
-    <Button
-      style={{
-        width: width ?? "",
-        height: height ?? "",
-
-        backgroundColor: backgroundColor
-          ? backgroundColor
-          : backgroundColor === "useDefault"
-          ? "var(--primaryColor)"
-          : "",
-        color: color ? color : color === "useDefault" ? "var(--cardColor)" : "",
-        ...otherStyles,
-      }}
-      {...otherProps}
-    >
-      {text}
-    </Button>
-  );
-};
-
-const Button = styled.button`
+const CustomButton = styled.button`
   width: ${(props: any) => props?.width ?? "100%"};
   height: ${(props: any) => props?.height ?? "100%"};
   border: none;
